@@ -9,7 +9,9 @@ AuthMe的防火墙系统，适配Flask/FastAPI
 
 ### TodoList
 
-- [x] SQL注入防护
-- [x] XSS攻击防护
+- [x] 简单的SQL防护
+- [x] 简单的XSS防护
+- [ ] SQL注入防护
+- [ ] XSS攻击防护
 - [ ] IP地址黑名单
 - [ ] CC/DDoS防护
