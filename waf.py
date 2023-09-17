@@ -10,6 +10,10 @@ from flask import request as flask_request
 sql_injection_pattern = re.compile(r"(\bunion\b|\bselect\b|\bfrom\b|\bwhere\b|\bdrop\b|\bdelete\b|\bupdate\b|\binsert\b|\binto\b|\bexec\b|\bsp_\w+|\bconcat\b|\bsubstring\b|\buser\b|\bdatabase\b|\bversion\b)|(\-\-|\'\s*or\s*\d+=\d+|\'\s*and\s*\d+=\d+|\'\s*or\s*\w+=\w+|\'\s*and\s*\w+=\w+|%00|%0a|%0d)|(\s*=\s*|<|>|!|~)\s*(\d+|\'\w+\')", re.IGNORECASE)
 xss_attack_pattern = re.compile(r"(alert\(|<style|</style|<script|</script|<script>|</script>|<img|<iframe|<div|<style>|</style>|<link|<meta|<body|onload=|onerror=|onclick=|onmouseover=|onfocus=|onblur=|oninput=|onkeydown=|onkeyup=|onkeypress=|onsubmit=|onreset=|onselect=|onchange=|src=|href=|%3c|%3e)", re.IGNORECASE)
 
+ip_black_list = [
+
+]
+
 # 定义一个函数，用于判断请求对象是否是FastAPI的Request类的实例
 def is_fastapi_request(request):
     return isinstance(request, Request)
